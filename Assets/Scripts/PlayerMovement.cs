@@ -32,14 +32,25 @@ public class PlayerMovement : MonoBehaviour
         moveInput = value.Get<Vector2>();
     }
 
-     void OnJump(InputValue value){
-        if(!playerFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) {return;}
-        if(value.isPressed){
-            playerBody.velocity += new Vector2 (0f, jumpSpeed);
-            playerState.SetTrigger("Jumping");
-        }
-        
-       
+    void OnJump(InputValue value)
+    {
+    bool isGrounded = playerFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"));
+
+   
+    if (isGrounded && value.isPressed)
+    {
+        playerBody.AddForce(new Vector2(0f, jumpSpeed), ForceMode2D.Impulse);
+        playerState.SetBool("isJumping", true);
+    }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+
+    if (collision.gameObject.CompareTag("Ground"))
+    {
+        playerState.SetBool("isJumping", false);
+    }
     }
 
     void Run(){
