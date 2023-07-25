@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 93fa87fedd4790147ba70ebdc267207e
+guid: 2e006bd0a5c40db44b58a8bee56e739d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 500
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Walk_0
+      name: boy-punch_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 0
-        width: 40
-        height: 27
+        x: 179
+        y: 50
+        width: 422
+        height: 656
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5943eea237bf30042b7165bfd02e91fd
-      internalID: -1541825115
+      spriteID: 55a4a24f75b91dc4fad34e6a09f8f584
+      internalID: 1284248061
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_1
+      name: boy-punch_1
       rect:
         serializedVersion: 2
-        x: 53
-        y: 0
-        width: 38
-        height: 28
+        x: 698
+        y: 50
+        width: 449
+        height: 656
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4f12828942278d42941f17a8d8f7e39
-      internalID: -404368824
+      spriteID: 2e3bed4fb873943409f6beb3bc312be1
+      internalID: -1865943550
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_2
+      name: boy-punch_2
       rect:
         serializedVersion: 2
-        x: 103
-        y: 1
-        width: 36
-        height: 28
+        x: 1322
+        y: 23
+        width: 344
+        height: 683
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 112411e8cc6e56641908f37f9573fcb2
-      internalID: 1023443077
+      spriteID: 3a8bb0e505583e04091e38b95f3d4d81
+      internalID: -941024246
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_3
+      name: boy-punch_3
       rect:
         serializedVersion: 2
-        x: 152
-        y: 0
-        width: 35
-        height: 29
+        x: 1844
+        y: 23
+        width: 422
+        height: 683
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f34b89a0d14634845b84dd65293d7a53
-      internalID: 818901013
+      spriteID: a49fd68593e507e4b9eab1c2caaf7042
+      internalID: -731219720
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_4
+      name: boy-punch_4
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
-        width: 43
-        height: 28
+        x: 2390
+        y: 50
+        width: 344
+        height: 656
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e08afe240c849bf488bcbc179fe12064
-      internalID: -947057657
+      spriteID: 0ebbf6e20d0835d4c8f91d9e1b8d1167
+      internalID: 1330053629
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_5
+      name: boy-punch_5
       rect:
         serializedVersion: 2
-        x: 241
-        y: 0
-        width: 42
-        height: 27
+        x: 2882
+        y: 50
+        width: 449
+        height: 656
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,8 +242,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68c7a8d1ecfa91d4c8c01784e02cadb5
-      internalID: 845947666
+      spriteID: e88cc01c542bfff4a8e04b2a44e59848
+      internalID: -427007235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boy-punch_6
+      rect:
+        serializedVersion: 2
+        x: 3455
+        y: 50
+        width: 422
+        height: 656
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c59f1277bc1ba474b8852a5a45bd9a86
+      internalID: -8197084
       vertices: []
       indices: 
       edges: []
@@ -259,12 +280,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Walk_0: -1541825115
-      Walk_1: -404368824
-      Walk_2: 1023443077
-      Walk_3: 818901013
-      Walk_4: -947057657
-      Walk_5: 845947666
+      boy-punch_0: 1284248061
+      boy-punch_1: -1865943550
+      boy-punch_2: -941024246
+      boy-punch_3: -731219720
+      boy-punch_4: 1330053629
+      boy-punch_5: -427007235
+      boy-punch_6: -8197084
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
