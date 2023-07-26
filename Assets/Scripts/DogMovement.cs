@@ -53,6 +53,16 @@ public class DogMovement : MonoBehaviour
          localScale.x *= -1;
          transform.localScale = localScale;
     }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.tag == "Player" ){
+            dogState.SetTrigger("Attacking");
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D other) {
+        dogState.ResetTrigger("Attacking");
+    }
     
     
 
