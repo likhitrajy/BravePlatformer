@@ -7,6 +7,10 @@ public class PlayerMovement : MonoBehaviour
 {
     Vector2 moveInput;
     Rigidbody2D playerBody; 
+    public Transform attackPoint;
+    public float attackRange = 0.5f;
+    public int attackDamage = 10;
+    public LayerMask enemyLayer;
     [SerializeField] float runSpeed = 10f;
     [SerializeField] float jumpSpeed = 1f;
     Animator playerState;
@@ -44,6 +48,17 @@ public class PlayerMovement : MonoBehaviour
     }
     }
 
+    void OnPunch(InputValue value){
+        playerState.SetTrigger("Punching");
+        Collider2D[] hitEnemies =  Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
+
+        foreach (Collider2D enemy in hitEnemies){
+            enemy.GetComponent<Health>().TakeDamage(attackDamage);
+        } 
+            
+        }
+    
+
     void OnCollisionEnter2D(Collision2D collision)
     {
 
@@ -65,5 +80,10 @@ public class PlayerMovement : MonoBehaviour
         if(playerHasHorizontalSpeed){
         transform.localScale = new Vector2(Mathf.Sign(playerBody.velocity.x), 1f);
     }
+    }
+
+     private void OnDrawGizmosSelected() {
+        if(attackPoint == null){ return;}
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }

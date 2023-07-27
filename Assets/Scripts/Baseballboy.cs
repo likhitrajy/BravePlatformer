@@ -29,12 +29,12 @@ public class Baseballboy : MonoBehaviour
     {
         if (IsPlayerBetweenPoints())
         {
-            // Move towards the player's position
+           
             float moveDirection = (playerTransform.position.x - transform.position.x);
-            enemyBody.velocity = new Vector2(moveDirection,transform.position.y).normalized * moveSpeed;
+            enemyBody.velocity = new Vector2(moveDirection,transform.position.y).normalized * moveSpeed * 2f;
             enemyState.SetBool("isRunning", true);
 
-            // Flip the sprite based on the movement direction
+            
             if (moveDirection > 0f)
             {
                 transform.localScale = new Vector3(1f, 1f, 1f);
@@ -50,12 +50,12 @@ public class Baseballboy : MonoBehaviour
         {
             if (hasReachedRandomPosition)
             {
-                // Move towards the random position between start and end points
+             
                 Vector2 moveDirection = (randomPosition - (Vector2)transform.position).normalized;
                 enemyBody.velocity = moveDirection * moveSpeed;
                 enemyState.SetBool("isRunning", true);
 
-                // Flip the sprite based on the movement direction
+               
                 if (moveDirection.x > 0f)
                 {
                     transform.localScale = new Vector3(1f, 1f, 1f);
@@ -65,7 +65,7 @@ public class Baseballboy : MonoBehaviour
                     transform.localScale = new Vector3(-1f, 1f, 1f);
                 }
 
-                // Check if the enemy has reached the random position
+               
                 if (Vector2.Distance(transform.position, randomPosition) < 0.5f)
                 {
                     hasReachedRandomPosition = false;
@@ -79,7 +79,7 @@ public class Baseballboy : MonoBehaviour
 
     bool IsPlayerBetweenPoints()
     {
-        // Check if the player is between the start and end points' positions
+      
         float playerX = playerTransform.position.x;
         float startX = startPoint.position.x;
         float endX = endPoint.position.x;
@@ -90,7 +90,7 @@ public class Baseballboy : MonoBehaviour
     IEnumerator WaitAndChooseRandomPosition()
     {
         enemyState.SetBool("isRunning", false);
-        // Wait for a few seconds before choosing the next random position
+       
         yield return new WaitForSeconds(Random.Range(1f, 3f));
 
         GetRandomPosition();
@@ -100,20 +100,20 @@ public class Baseballboy : MonoBehaviour
 
     void GetRandomPosition()
     {
-        // Get a random position between start and end points
+      
         float randomX = Random.Range(startPoint.position.x, endPoint.position.x);
-        float randomY = transform.position.y; // Keep the same Y position
+        float randomY = transform.position.y; 
         randomPosition = new Vector2(randomX, randomY);
     }
 
     void GroundCheck()
     {
-        // Perform a raycast to check if the enemy is grounded
+  
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.5f, groundLayer);
 
         if (hit.collider == null)
         {
-            // If not grounded, stop the enemy's Y-axis movement
+           
             enemyBody.velocity = new Vector2(enemyBody.velocity.x, 0f);
         }
     }
