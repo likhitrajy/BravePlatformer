@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &777086953454693659
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7958525920035836470}
+  m_Layer: 7
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7958525920035836470
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777086953454693659}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.409, y: 0.029, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3347904503572872968}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5006620967909423909
 GameObject:
   m_ObjectHideFlags: 0
@@ -16,6 +47,7 @@ GameObject:
   - component: {fileID: 2805650660297249657}
   - component: {fileID: 4709455075053952607}
   - component: {fileID: 8364194941623900787}
+  - component: {fileID: 7186994785285516336}
   m_Layer: 7
   m_Name: Boy
   m_TagString: Player
@@ -34,7 +66,8 @@ Transform:
   m_LocalPosition: {x: -10.6, y: 24.31, z: -0.10512731}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7958525920035836470}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -215,6 +248,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33e35bbe760052549ae83e0bc0b4930d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackPoint: {fileID: 7958525920035836470}
+  attackRange: 0.25
+  attackDamage: 10
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 512
   runSpeed: 6
   jumpSpeed: 10
 --- !u!61 &8364194941623900787
@@ -262,3 +301,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.49391317, y: 0.13735604}
   m_EdgeRadius: 0
+--- !u!114 &7186994785285516336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5006620967909423909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5147ba8a5b3854c4fa6fb48b4f800286, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
